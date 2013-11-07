@@ -29,6 +29,11 @@ class BBCodeParser {
         $this->parsers = ($parsers === null) ? $this->availableParsers : $parsers;
     }
 
+    /**
+     * Parses the BBCode string
+     * @param  string $source String containing the BBCode
+     * @return string Parsed string
+     */
     public function parse($source)
     {
         foreach ($this->parsers as $parser) {
@@ -38,6 +43,11 @@ class BBCodeParser {
         return $source;
     }
 
+    /**
+     * Parse bold tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseBold($source)
     {
         $pattern = '/\[b\](.*)\[\/b\]/';
@@ -45,6 +55,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse italic tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseItalic($source)
     {
         $pattern = '/\[i\](.*)\[\/i\]/';
@@ -52,6 +67,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse under line tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseUnderLine($source)
     {
         $pattern = '/\[u\](.*)\[\/u\]/';
@@ -59,6 +79,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse line through tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseLineThrough($source)
     {
         $pattern = '/\[s\](.*)\[\/s\]/';
@@ -66,6 +91,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse font size tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseFontSize($source)
     {
         $pattern = '/\[size\=([1-7])\](.*)\[\/size\]/';
@@ -73,6 +103,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse font color tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseFontColor($source)
     {
         $pattern = '/\[color\=(#[A-f0-9]{6}|#[A-f0-9]{3})\](.*)\[\/color\]/';
@@ -80,6 +115,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse center tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseCenter($source)
     {
         $pattern = '/\[center\](.*)\[\/center\]/';
@@ -87,6 +127,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse quote tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseQuote($source)
     {
         $pattern = '/\[quote\](.*)\[\/quote\]/';
@@ -94,6 +139,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse named quote tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseNamedQuote($source)
     {
         $pattern = '/\[quote\=(.*)\](.*)\[\/quote\]/';
@@ -101,6 +151,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse link tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseLink($source)
     {
         $pattern = '/\[url\](.*)\[\/url\]/';
@@ -108,6 +163,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse named link tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseNamedLink($source)
     {
         $pattern = '/\[url\=(.*)\](.*)\[\/url\]/';
@@ -115,6 +175,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse image tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseImage($source)
     {
         $pattern = '/\[img\](.*)\[\/img\]/';
@@ -122,6 +187,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse ordered list tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseOrderedList($source)
     {
         $pattern = '/\[ol\](.*)\[\/ol\]/s';
@@ -129,6 +199,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse unordered list tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseUnorderedList($source)
     {
         $pattern = '/\[ul\](.*)\[\/ul\]/s';
@@ -136,6 +211,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse list item tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseListItem($source)
     {
         $pattern = '/\[\*\](.*)/';
@@ -143,6 +223,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse code tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseCode($source)
     {
         $pattern = '/\[code\](.*)\[\/code\]/';
@@ -150,6 +235,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Parse youtube tags
+     * @param  string $source String to parse
+     * @return string Parsed string
+     */
     public function parseYoutube($source)
     {
         $pattern = '/\[youtube\](.*)\[\/youtube\]/';
@@ -157,6 +247,11 @@ class BBCodeParser {
         return preg_replace($pattern, $replace, $source);
     }
 
+    /**
+     * Limits the parsers to only those you specify
+     * @param  mixed $only parsers
+     * @return object BBCodeParser object
+     */
     public function only($only = null)
     {
         $only = (is_array($only)) ? $only : func_get_args();
@@ -164,6 +259,11 @@ class BBCodeParser {
         return $this;
     }
 
+    /**
+     * Removes the parsers you want to exclude
+     * @param  mixed $except parsers
+     * @return object BBCodeParser object
+     */
     public function except($except = null)
     {
         $except = (is_array($except)) ? $except : func_get_args();
@@ -171,27 +271,52 @@ class BBCodeParser {
         return $this;
     }
 
+    /**
+     * List of all available parsers
+     * @return array array of available parsers
+     */
+    public function getAvailableParsers()
+    {
+        return $this->availableParsers;
+    }
+
+    /**
+     * List of chosen parsers
+     * @return array array of parsers
+     */
     public function getParsers()
     {
         return $this->parsers;
     }
 
-    private function arrayOnly($array, $keys)
+    /**
+     * Removes all parsers that you don´t want
+     * @param  array $allParsers Available parsers
+     * @param  array $only chosen parsers
+     * @return array parsers
+     */
+    private function arrayOnly($allParsers, $only)
     {
         return array_flip(
                 array_intersect_key(
-                    array_flip($array), 
-                    array_flip((array) $keys)
+                    array_flip($allParsers), 
+                    array_flip($only)
                 )
         );
     }
 
-    private function arrayExcept($array, $keys)
+    /**
+     * Removes the parsers that you don´t want
+     * @param  array $allParsers Available parsers
+     * @param  array $except parsers to exclude
+     * @return array parsers
+     */
+    private function arrayExcept($allParsers, $except)
     {
         return array_flip(
                 array_diff_key(
-                    array_flip($array),
-                    array_flip($keys)
+                    array_flip($allParsers),
+                    array_flip($except)
                 )
         );
     }
