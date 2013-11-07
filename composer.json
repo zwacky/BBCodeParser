@@ -1,7 +1,7 @@
 {
     "name": "golonka/bbcodeparser",
-    "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
-    "keywords": ["bbcode", "parser"],
+    "description": "Parse your BBCode easy with this library.",
+    "keywords": ["bbcode", "parser", "laravel"],
     "homepage": "http://github.com/golonka/bbcodeparser",
     "type": "library",
     "license": "MIT",
@@ -9,7 +9,7 @@
         {
             "name": "Joseph Landberg",
             "email": "joseph.landberg@gt5.se",
-            "homepage": "http://seld.be"
+            "homepage": "http://gt5.se"
         }
     ],
     "require": {
