@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/golonka/BBCodeParser.png?branch=master)](https://travis-ci.org/golonka/BBCodeParser)
+
 # BBCodeParser
 BBCodeParser is a standalone library that parses all(?) the common bbcode tags.
 The easiest way to install is via composer and is equally as easy to integrate into Laravel 4
