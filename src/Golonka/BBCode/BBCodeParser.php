@@ -158,10 +158,10 @@ class BBCodeParser {
      */
     private function arrayOnly($only)
     {
-        $self = $this;
-        return array_filter($only, function($parser) use ($self)
+        $availableParsers = $this->availableParsers;
+        return array_filter($only, function($parser) use ($availableParsers)
         {
-            return isset($self->availableParsers[$parser]);
+            return isset($availableParsers[$parser]);
         });
     }
 
